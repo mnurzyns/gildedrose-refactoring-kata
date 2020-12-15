@@ -1,5 +1,6 @@
 #include "GildedRose.h"
 
+//create variables holding words
 
 GildedRose::GildedRose(::std::vector<Item> const& items) : items(items)
 {}
