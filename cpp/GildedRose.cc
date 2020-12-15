@@ -10,75 +10,70 @@ GildedRose::GildedRose(::std::vector<Item> && items) : items(::std::move(items))
 
 void GildedRose::updateQuality()
 {
-    std::string name;
-    int quality, sellIn;
-
-    std::string aged = "Aged Brie";
-    std::string sulfuras = "Sulfuras, Hand of Ragnaros";
-    std::string backstage = "Backstage passes to a TAFKAL80ETC concert";
+    const std::string aged = "Aged Brie";
+    const std::string sulfuras = "Sulfuras, Hand of Ragnaros";
+    const std::string backstage = "Backstage passes to a TAFKAL80ETC concert";
     
 
-    for (int i = 0; i < items.size(); i++)
+    for (auto& it : items)
     {
-        name = items[i].name;
-        quality = items[i].quality;
-        sellIn = items[i].sellIn;
+        
 
-        if (name != aged && name != backstage && name != sulfuras)
+        if (it.name != aged && it.name != backstage && it.name != sulfuras)
         {
-            if (items[i].quality > 0)
+            if (it.quality > 0)
             {
-                --items[i].quality;
+                --it.quality;
             }
         }
         else
         {
-            if (items[i].quality < 50)
+            if (it.quality < 50)
             {
-                ++items[i].quality;
+                ++it.quality;
 
-                if (name == backstage)
+                if (it.name == backstage)
                 {
-                    if (items[i].sellIn < 11)
+                    if (it.sellIn < 11)
                     {
-                        ++items[i].quality; 
+                        ++it.quality; 
                     }
 
-                    if (items[i].sellIn < 6)
+                    if (it.sellIn < 6)
                     {
-                        ++items[i].quality;
+                        ++it.quality;
                     }
                 }
             }
         }
 
-        if (name != sulfuras)
+        if (it.name != sulfuras)
         {
-            --items[i].sellIn;
+            --it.sellIn;
         }
 
-        if (items[i].sellIn < 0)
+        if (it.sellIn < 0)
         {
-            if (name != aged)
+            if (it.name != aged)
             {
-                if (name != backstage)
+                if (it.name != backstage)
                 {
-                    if (items[i].quality > 0)
+                    if (it.quality > 0)
                     {
-                        if (name != sulfuras)
+                        if (it.name != sulfuras)
                         {
-                            --items[i].quality;
+                            --it.quality;
                         }
                     }
                 }
                 else
                 {
-                    items[i].quality=0;
+                    it.quality=0;
                 }
             }
-            else if (items[i].quality < 50)
+            else if (it.quality < 50)
             {
-                ++items[i].quality;
+                ++it.quality;
             }
         }
     }
