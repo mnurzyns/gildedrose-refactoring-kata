@@ -18,7 +18,7 @@ void GildedRose::updateQuality()
                 --items[i].quality;
             }
         }
-        else
+        else //aged, sulfas, backstage
         {
             if (items[i].quality < 50)
             {
@@ -39,6 +39,8 @@ void GildedRose::updateQuality()
             }
         }
 
+        ////////////////////////////////////
+
         if (items[i].name != "Sulfuras, Hand of Ragnaros")
         {
             --items[i].sellIn;
@@ -48,19 +50,16 @@ void GildedRose::updateQuality()
         {
             if (items[i].name != "Aged Brie")
             {
-                if (items[i].name != "Backstage passes to a TAFKAL80ETC concert")
+                if (items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].name != "Sulfuras, Hand of Ragnaros")
                 {
                     if (items[i].quality > 0)
                     {
-                        if (items[i].name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            --items[i].quality;
-                        }
+                        --items[i].quality;
                     }
                 }
-                else
+                if (items[i].name == "Backstage passes to a TAFKAL80ETC concert")   // <==> else
                 {
-                    items[i].quality=0;
+                    items[i].quality = 0;
                 }
             }
             else if (items[i].quality < 50)
