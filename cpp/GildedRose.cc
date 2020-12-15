@@ -16,7 +16,7 @@ void GildedRose::updateQuality()
 
     for (auto &it : items)
     {
-
+        /////////////////////////////////////
         if (it.name == aged)
         {
             if (it.quality < 50)
@@ -32,54 +32,53 @@ void GildedRose::updateQuality()
                     ++it.quality;
                 }
             }
+            continue;
         }
-        else if (it.name == sulfuras)
+        ///////////////////////////////////
+        if (it.name == sulfuras )
         {
             if (it.quality < 50)
             {
                 ++it.quality;
             }
+            continue;
         }
-
-        else if (it.name == backstage)
+        ///////////////////////////////////
+        if (it.name == backstage)
         {
-            if (it.quality < 50)
-            {
-                ++it.quality;
-
-                if (it.sellIn < 11)
-                {
-                    ++it.quality;
-                }
-
-                if (it.sellIn < 6)
-                {
-                    ++it.quality;
-                }
-            }
             --it.sellIn;
-
             if (it.sellIn < 0)
             {
                 it.quality = 0;
             }
-        }
-        else
-        {
-            if (it.quality > 0)
+            else if (it.sellIn < 5)
             {
-                --it.quality;
+                it.quality += 3;
             }
+            else if (it.sellIn < 10)
+            {
+                it.quality += 2;
+            }
+            else if (it.quality < 50)
+            {
+                it.quality++;
+            }
+            continue;      
+        }
+        /////////////////////////////////
+        if (it.quality > 0)
+        {
+            --it.quality;
             --it.sellIn;
 
             if (it.sellIn < 0)
             {
-                if (it.quality > 0)
-                {
-                    --it.quality;
-                }
+                --it.quality;
             }
         }
-
+        else
+        {
+            --it.sellIn;
+        }
     }
 }
