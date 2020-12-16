@@ -55,32 +55,6 @@ void GildedRose::updateQuality()
                 }
             }
         }
-   
-         // if (items[i].name != nameThree)
-        // {
-        //     --items[i].sellIn;
-        // }
-
-        // else
-        // {
-        //     if (items[i].quality < 50)
-        //     {
-        //         incrementForQuality();
-
-        //         if (items[i].name == nameTwo)
-        //         {
-        //             if (items[i].sellIn < 6)
-        //             {
-        //                 incrementForQuality();
-        //             }
-        //             if (items[i].sellIn < 11)
-        //             {
-        //                 incrementForQuality();
-        //             }
-        //         }
-        //     }
-        // }
-
         if (items[i].name != nameThree)
         {
             --items[i].sellIn;
@@ -88,7 +62,6 @@ void GildedRose::updateQuality()
 
         if (items[i].sellIn < 0)
         {
-
             if (items[i].name != nameOne && items[i].name != nameTwo && items[i].name != nameThree)
             {
                 if (items[i].quality > 0)
@@ -96,36 +69,14 @@ void GildedRose::updateQuality()
                     decrementationForQuality();
                 }
             }
-            if (items[i].name == nameTwo)
-            {
-                items[i].quality = 0;
-            }
             if (items[i].quality < 50 && items[i].name == nameOne)
             {
                 incrementForQuality();
             }
+            if (items[i].name == nameTwo)
+            {
+                items[i].quality = 0;
+            }
         }
     }
 }
-// if (items[i].name != nameOne)
-// {
-//     if (items[i].name != nameTwo)
-//     {
-//         if (items[i].quality > 0)
-//         {
-//             if (items[i].name != nameThree)
-//             {
-//                 --items[i].quality;
-//             }
-//         }
-//     }
-//     else
-//     {
-//         items[i].quality = 0;
-//     }
-// }
-
-// else if (items[i].quality < 50)
-// {
-//     ++items[i].quality;
-// }
