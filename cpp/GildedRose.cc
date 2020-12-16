@@ -13,7 +13,7 @@ void GildedRose::updateQuality()
     std::string nameThree="Sulfuras, Hand of Ragnaros";
     for (int i = 0; i < items.size(); i++)
     {
-        if (items[i].name != nameOne && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].name != "Sulfuras, Hand of Ragnaros")
+        if (items[i].name != nameOne && items[i].name != nameTwo && items[i].name != nameThree)
         {
             if (items[i].quality > 0)
             {
@@ -26,7 +26,7 @@ void GildedRose::updateQuality()
             {
                 ++items[i].quality;
 
-                if (items[i].name == "Backstage passes to a TAFKAL80ETC concert")
+                if (items[i].name == nameTwo)
                 {
                     if (items[i].sellIn < 11)
                     {
@@ -41,7 +41,7 @@ void GildedRose::updateQuality()
             }
         }
 
-        if (items[i].name != "Sulfuras, Hand of Ragnaros")
+        if (items[i].name != nameThree)
         {
             --items[i].sellIn;
         }
@@ -50,11 +50,11 @@ void GildedRose::updateQuality()
         {
             if (items[i].name != nameOne)
             {
-                if (items[i].name != "Backstage passes to a TAFKAL80ETC concert")
+                if (items[i].name != nameTwo)
                 {
                     if (items[i].quality > 0)
                     {
-                        if (items[i].name != "Sulfuras, Hand of Ragnaros")
+                        if (items[i].name != nameThree)
                         {
                             --items[i].quality;
                         }
