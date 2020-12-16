@@ -8,9 +8,18 @@ GildedRose::GildedRose(::std::vector<Item> const &items) : items(items)
 GildedRose::GildedRose(::std::vector<Item> &&items) : items(::std::move(items))
 {
 }
-void GildedRose::decrementation()
+
+void GildedRose::incrementForQuality()
 {
-    for(int i=0;i < items.size(); i++)
+    for(int i=0; i < items.size(); i++)
+    {
+        ++items[i].quality;
+    }
+}
+
+void GildedRose::decrementationForQuality()
+{
+    for (int i = 0; i < items.size(); i++)
     {
         --items[i].quality;
     }
@@ -27,24 +36,24 @@ void GildedRose::updateQuality()
         {
             if (items[i].quality > 0)
             {
-                decrementation();
+                decrementationForQuality();
             }
         }
         else
         {
             if (items[i].quality < 50)
             {
-                ++items[i].quality;
+                incrementForQuality();
 
                 if (items[i].name == nameTwo)
                 {
                     if (items[i].sellIn < 6)
                     {
-                        ++items[i].quality;
+                        incrementForQuality();
                     }
                     if (items[i].sellIn < 11)
                     {
-                        ++items[i].quality;
+                        incrementForQuality();
                     }
                 }
             }
@@ -78,7 +87,7 @@ void GildedRose::updateQuality()
             {
                 if (items[i].quality > 0)
                 {
-                    --items[i].quality;
+                    decrementationForQuality();
                 }
             }
             if (items[i].name == nameTwo)
@@ -87,7 +96,7 @@ void GildedRose::updateQuality()
             }
             if (items[i].quality < 50 && items[i].name == nameOne)
             {
-                ++items[i].quality;
+                incrementForQuality();
             }
             // else if (items[i].quality < 50)
             // {
