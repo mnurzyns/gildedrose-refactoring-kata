@@ -11,7 +11,7 @@ GildedRose::GildedRose(::std::vector<Item> &&items) : items(::std::move(items))
 
 void GildedRose::incrementForQuality()
 {
-    for(int i=0; i < items.size(); i++)
+    for (int i = 0; i < items.size(); i++)
     {
         ++items[i].quality;
     }
@@ -39,25 +39,47 @@ void GildedRose::updateQuality()
                 decrementationForQuality();
             }
         }
-        else
+        else if (items[i].quality < 50)
         {
-            if (items[i].quality < 50)
-            {
-                incrementForQuality();
+            incrementForQuality();
 
-                if (items[i].name == nameTwo)
+            if (items[i].name == nameTwo)
+            {
+                if (items[i].sellIn < 6)
                 {
-                    if (items[i].sellIn < 6)
-                    {
-                        incrementForQuality();
-                    }
-                    if (items[i].sellIn < 11)
-                    {
-                        incrementForQuality();
-                    }
+                    incrementForQuality();
+                }
+                if (items[i].sellIn < 11)
+                {
+                    incrementForQuality();
                 }
             }
         }
+   
+         // if (items[i].name != nameThree)
+        // {
+        //     --items[i].sellIn;
+        // }
+
+        // else
+        // {
+        //     if (items[i].quality < 50)
+        //     {
+        //         incrementForQuality();
+
+        //         if (items[i].name == nameTwo)
+        //         {
+        //             if (items[i].sellIn < 6)
+        //             {
+        //                 incrementForQuality();
+        //             }
+        //             if (items[i].sellIn < 11)
+        //             {
+        //                 incrementForQuality();
+        //             }
+        //         }
+        //     }
+        // }
 
         if (items[i].name != nameThree)
         {
@@ -66,23 +88,7 @@ void GildedRose::updateQuality()
 
         if (items[i].sellIn < 0)
         {
-            // if (items[i].name != nameOne)
-            // {
-            //     if (items[i].name != nameTwo)
-            //     {
-            //         if (items[i].quality > 0)
-            //         {
-            //             if (items[i].name != nameThree)
-            //             {
-            //                 --items[i].quality;
-            //             }
-            //         }
-            //     }
-            //     else
-            //     {
-            //         items[i].quality = 0;
-            //     }
-            // }
+
             if (items[i].name != nameOne && items[i].name != nameTwo && items[i].name != nameThree)
             {
                 if (items[i].quality > 0)
@@ -98,10 +104,28 @@ void GildedRose::updateQuality()
             {
                 incrementForQuality();
             }
-            // else if (items[i].quality < 50)
-            // {
-            //     ++items[i].quality;
-            // }
         }
     }
 }
+// if (items[i].name != nameOne)
+// {
+//     if (items[i].name != nameTwo)
+//     {
+//         if (items[i].quality > 0)
+//         {
+//             if (items[i].name != nameThree)
+//             {
+//                 --items[i].quality;
+//             }
+//         }
+//     }
+//     else
+//     {
+//         items[i].quality = 0;
+//     }
+// }
+
+// else if (items[i].quality < 50)
+// {
+//     ++items[i].quality;
+// }
