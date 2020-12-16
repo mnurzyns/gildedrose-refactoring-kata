@@ -1,0 +1,13 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest.rule
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest-complete.rule
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-update.rule
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/home/jarek/cpp/Bakcyl  Nokia/Github/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-build.rule
