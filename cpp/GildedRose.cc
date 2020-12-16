@@ -1,5 +1,6 @@
 #include "GildedRose.h"
 //create variables holding words
+//maybe create function increment and decrementation
 GildedRose::GildedRose(::std::vector<Item> const& items) : items(items)
 {}
 
