@@ -20,5 +20,7 @@ public:
     explicit GildedRose(::std::vector<Item> const& items);
 
     void updateQuality();
+
+    void decrementation();
 };
 

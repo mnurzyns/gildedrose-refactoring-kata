@@ -8,7 +8,13 @@ GildedRose::GildedRose(::std::vector<Item> const &items) : items(items)
 GildedRose::GildedRose(::std::vector<Item> &&items) : items(::std::move(items))
 {
 }
-
+void GildedRose::decrementation()
+{
+    for(int i=0;i < items.size(); i++)
+    {
+        --items[i].quality;
+    }
+}
 void GildedRose::updateQuality()
 {
     std::string nameOne = "Aged Brie";
@@ -21,7 +27,7 @@ void GildedRose::updateQuality()
         {
             if (items[i].quality > 0)
             {
-                --items[i].quality;
+                decrementation();
             }
         }
         else
@@ -32,12 +38,11 @@ void GildedRose::updateQuality()
 
                 if (items[i].name == nameTwo)
                 {
-                    if (items[i].sellIn < 11)
+                    if (items[i].sellIn < 6)
                     {
                         ++items[i].quality;
                     }
-
-                    if (items[i].sellIn < 6)
+                    if (items[i].sellIn < 11)
                     {
                         ++items[i].quality;
                     }
