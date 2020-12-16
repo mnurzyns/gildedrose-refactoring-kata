@@ -44,16 +44,20 @@ void GildedRose::updateQuality()
             --items[i].sellIn;
         }
 
-        if (items[i].sellIn < 0)
+
+        if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].name != "Sulfuras, Hand of Ragnaros")
         {
-            if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].name != "Sulfuras, Hand of Ragnaros")
+            if (items[i].sellIn < 0)
             {
                 if (items[i].quality > 0)
                 {
                     --items[i].quality;
                 }
             }
+        }
 
+        if (items[i].sellIn < 0)
+        {
             if (items[i].name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 items[i].quality = 0;
