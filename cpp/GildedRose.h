@@ -21,6 +21,6 @@ public:
 
     void updateQuality();
 
-    void decrementation();
+    void decrementationForQuality();
 };
 
