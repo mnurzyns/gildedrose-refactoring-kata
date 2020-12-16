@@ -1,7 +1,5 @@
 #include "GildedRose.h"
-
 //create variables holding words
-
 GildedRose::GildedRose(::std::vector<Item> const& items) : items(items)
 {}
 
@@ -15,7 +13,7 @@ void GildedRose::updateQuality()
     std::string nameThree="Sulfuras, Hand of Ragnaros";
     for (int i = 0; i < items.size(); i++)
     {
-        if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].name != "Sulfuras, Hand of Ragnaros")
+        if (items[i].name != nameOne && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].name != "Sulfuras, Hand of Ragnaros")
         {
             if (items[i].quality > 0)
             {
@@ -50,7 +48,7 @@ void GildedRose::updateQuality()
 
         if (items[i].sellIn < 0)
         {
-            if (items[i].name != "Aged Brie")
+            if (items[i].name != nameOne)
             {
                 if (items[i].name != "Backstage passes to a TAFKAL80ETC concert")
                 {
