@@ -10,7 +10,41 @@ GildedRose::GildedRose(::std::vector<Item> &&items) : items(::std::move(items))
 
 auto isFresh = [](int &quality) { (quality < 50) ? quality++ : quality; };
 
+void agedFunc(int &quality, int &sellIn)
+{
+    isFresh(quality);
 
+    if (sellIn < 0)
+    {
+        isFresh(quality);
+    }
+}
+
+void sulfurasFunc(int &quality, int &sellIn)
+{
+    ++sellIn;
+    isFresh(quality);
+}
+
+void backstageFunc(int &quality, int &sellIn)
+{
+    if (sellIn < 0)
+    {
+        quality = 0;
+    }
+    else if (sellIn < 5)
+    {
+        quality += 3;
+    }
+    else if (sellIn < 10)
+    {
+        quality += 2;
+    }
+    else
+    {
+        isFresh(quality);
+    }
+}
 
 void GildedRose::updateQuality()
 {
@@ -21,46 +55,22 @@ void GildedRose::updateQuality()
     for (auto &it : items)
     {
         --it.sellIn;
-        
+
         if (it.name == aged)
         {
-
-            isFresh(it.quality);
-
-            if (it.sellIn < 0)
-            {
-                isFresh(it.quality);
-            }
-
+            agedFunc(it.quality, it.sellIn);
             continue;
         }
-        
+
         if (it.name == sulfuras)
         {
-            ++it.sellIn;
-            isFresh(it.quality);
+            sulfurasFunc(it.quality, it.sellIn);
             continue;
         }
-        
+
         if (it.name == backstage)
         {
-
-            if (it.sellIn < 0)
-            {
-                it.quality = 0;
-            }
-            else if (it.sellIn < 5)
-            {
-                it.quality += 3;
-            }
-            else if (it.sellIn < 10)
-            {
-                it.quality += 2;
-            }
-            else
-            {
-                isFresh(it.quality);
-            }
+            backstageFunc(it.quality, it.sellIn);
             continue;
         }
 
