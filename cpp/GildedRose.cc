@@ -55,26 +55,19 @@ void GildedRose::updateQuality()
     for (auto &it : items)
     {
         --it.sellIn;
-
         if (it.name == aged)
         {
             agedFunc(it.quality, it.sellIn);
-            continue;
-        }
 
-        if (it.name == sulfuras)
+        }else if (it.name == sulfuras)
         {
             sulfurasFunc(it.quality, it.sellIn);
-            continue;
-        }
 
-        if (it.name == backstage)
+        }else if (it.name == backstage)
         {
             backstageFunc(it.quality, it.sellIn);
-            continue;
-        }
-
-        if (it.quality > 0)
+            
+        }else if (it.quality > 0)
         {
             --it.quality;
 
