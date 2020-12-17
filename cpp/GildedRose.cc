@@ -41,7 +41,7 @@ void GildedRose::updateQuality()
         }
         else if (items[i].quality < 50)
         {
-            incrementForQuality();
+            ++items[i].quality;
 
             if (items[i].name == nameTwo)
             {
