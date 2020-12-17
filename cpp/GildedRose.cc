@@ -8,6 +8,10 @@ GildedRose::GildedRose(::std::vector<Item> &&items) : items(::std::move(items))
 {
 }
 
+auto isFresh = [](int &quality) { (quality < 50) ? quality++ : quality; };
+
+
+
 void GildedRose::updateQuality()
 {
     const std::string aged = "Aged Brie";
@@ -16,37 +20,31 @@ void GildedRose::updateQuality()
 
     for (auto &it : items)
     {
-        /////////////////////////////////////
+        --it.sellIn;
+        
         if (it.name == aged)
         {
-            if (it.quality < 50)
-            {
-                ++it.quality;
-            }
-            --it.sellIn;
+
+            isFresh(it.quality);
 
             if (it.sellIn < 0)
             {
-                if (it.quality < 50)
-                {
-                    ++it.quality;
-                }
+                isFresh(it.quality);
             }
+
             continue;
         }
-        ///////////////////////////////////
-        if (it.name == sulfuras )
+        
+        if (it.name == sulfuras)
         {
-            if (it.quality < 50)
-            {
-                ++it.quality;
-            }
+            ++it.sellIn;
+            isFresh(it.quality);
             continue;
         }
-        ///////////////////////////////////
+        
         if (it.name == backstage)
         {
-            --it.sellIn;
+
             if (it.sellIn < 0)
             {
                 it.quality = 0;
@@ -59,26 +57,21 @@ void GildedRose::updateQuality()
             {
                 it.quality += 2;
             }
-            else if (it.quality < 50)
+            else
             {
-                it.quality++;
+                isFresh(it.quality);
             }
-            continue;      
+            continue;
         }
-        /////////////////////////////////
+
         if (it.quality > 0)
         {
             --it.quality;
-            --it.sellIn;
 
             if (it.sellIn < 0)
             {
                 --it.quality;
             }
-        }
-        else
-        {
-            --it.sellIn;
         }
     }
 }
