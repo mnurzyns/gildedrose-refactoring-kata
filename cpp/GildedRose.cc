@@ -17,8 +17,8 @@ void GildedRose::updateQuality()
             {
                 ++items[i].quality;
             }
-            --items[i].sellIn;
-            if (items[i].quality < 50 && items[i].sellIn < 0)
+
+            if (--items[i].sellIn < 0 && items[i].quality < 50)
             {
                 ++items[i].quality;
             }
@@ -39,8 +39,7 @@ void GildedRose::updateQuality()
                     ++items[i].quality;
                 }
             }
-            --items[i].sellIn;
-            if (items[i].sellIn < 0)
+            if (--items[i].sellIn < 0)
             {
                 items[i].quality = 0;
             }
