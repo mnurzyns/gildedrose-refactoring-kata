@@ -16,8 +16,6 @@ void GildedRose::updateQuality()
         // --- refactored code --- // 
 for (int i = 0; i < items.size(); i++)
 {
-
-        
         if(items[i].name == AGEDBRIE)
         {
             if (items[i].quality < 50)
@@ -25,10 +23,7 @@ for (int i = 0; i < items.size(); i++)
                 ++items[i].quality;
             }
             
-            if(items[i].name != SULFURAS)
-            {
                 --items[i].sellIn;
-            }
             
             if (items[i].sellIn < 0)
             {
@@ -53,10 +48,8 @@ for (int i = 0; i < items.size(); i++)
                     ++items[i].quality; 
                 }
             }
-            if(items[i].name != SULFURAS)
-            {
-            --items[i].sellIn;
-            }
+            
+            --items[i].sellIn;            
             
             if (items[i].sellIn < 0)
             {
@@ -72,17 +65,14 @@ for (int i = 0; i < items.size(); i++)
             }
         }
         
-        else
+        else // Every other item
         {
             if (items[i].quality > 0)
             {
                 --items[i].quality;
             }
             
-            if(items[i].name != SULFURAS)
-            {
                 --items[i].sellIn;
-            }
             
             if (items[i].sellIn < 0)
             {
