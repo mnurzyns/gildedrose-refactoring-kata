@@ -21,9 +21,8 @@ void GildedRose::updateQuality()
         {
             ++elem.quality;
 
-            if ((elem.name == concert && elem.sellIn < 6) ||
-                (elem.name == concert && elem.sellIn < 11))
-                    ++elem.quality;
+            if (elem.name == concert && elem.sellIn < 6) ++elem.quality;
+            if (elem.name == concert && elem.sellIn < 11) ++elem.quality;
         }
 
         if (elem.name != sulfuras) --elem.sellIn;
