@@ -15,7 +15,7 @@ void GildedRose::updateQuality()
     const string sulfuras = "Sulfuras, Hand of Ragnaros";
     for (auto elem : items)
     {
-        if (elem.name != brie && elem.name != concert && elem.quality > 0 && elem.name != sulfuras)
+        if (elem.name != brie && elem.name != concert && elem.name != sulfuras && elem.quality > 0)
             --elem.quality;
         else if (elem.quality < 50)
         {
@@ -30,11 +30,8 @@ void GildedRose::updateQuality()
 
         if (elem.sellIn < 0)
         {
-            if (elem.name != brie)
-            {
-                if (elem.name != concert && elem.quality > 0 && elem.name != sulfuras) --elem.quality;
-                else elem.quality = 0;
-            }
+            if (elem.name != brie && elem.name != concert && elem.name != sulfuras && elem.quality > 0) --elem.quality;
+            else if (elem.name != brie  && (elem.name == concert || elem.name == sulfuras || elem.quality <= 0)) elem.quality = 0;
             else if (elem.quality < 50) ++elem.quality;
         }
     }
