@@ -9,26 +9,30 @@ GildedRose::GildedRose(::std::vector<Item> && items) : items(::std::move(items))
 
 void GildedRose::updateQuality()
 {
+    using std::string;
+    const string brie = "Aged Brie";
+    const string concert = "Backstage passes to a TAFKAL80ETC concert";
+    const string sulfuras = "Sulfuras, Hand of Ragnaros";
     for (auto elem : items)
     {
-        if (elem.name != "Aged Brie" && elem.name != "Backstage passes to a TAFKAL80ETC concert" && elem.quality > 0 && elem.name != "Sulfuras, Hand of Ragnaros")
+        if (elem.name != brie && elem.name != concert && elem.quality > 0 && elem.name != sulfuras)
             --elem.quality;
         else if (elem.quality < 50)
         {
             ++elem.quality;
 
-            if ((elem.name == "Backstage passes to a TAFKAL80ETC concert" && (elem.sellIn < 11 && elem.quality < 50)) ||
-                (elem.name == "Backstage passes to a TAFKAL80ETC concert" && (elem.sellIn < 11 && elem.quality < 50)))
+            if ((elem.name == concert && elem.sellIn < 6) ||
+                (elem.name == concert && elem.sellIn < 11))
                     ++elem.quality;
         }
 
-        if (elem.name != "Sulfuras, Hand of Ragnaros") --elem.sellIn;
+        if (elem.name != sulfuras) --elem.sellIn;
 
         if (elem.sellIn < 0)
         {
-            if (elem.name != "Aged Brie")
+            if (elem.name != brie)
             {
-                if (elem.name != "Backstage passes to a TAFKAL80ETC concert" && elem.quality > 0 && elem.name != "Sulfuras, Hand of Ragnaros") --elem.quality;
+                if (elem.name != concert && elem.quality > 0 && elem.name != sulfuras) --elem.quality;
                 else elem.quality = 0;
             }
             else if (elem.quality < 50) ++elem.quality;
