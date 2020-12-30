@@ -17,7 +17,7 @@ void GildedRose::updateQuality()
             {
                 if (elem.name != "Sulfuras, Hand of Ragnaros")
                 {
-                    elem.quality = elem.quality - 1;
+                    --elem.quality;
                 }
             }
         }
@@ -25,7 +25,7 @@ void GildedRose::updateQuality()
         {
             if (elem.quality < 50)
             {
-                elem.quality = elem.quality + 1;
+                ++elem.quality;
 
                 if (elem.name == "Backstage passes to a TAFKAL80ETC concert")
                 {
@@ -33,7 +33,7 @@ void GildedRose::updateQuality()
                     {
                         if (elem.quality < 50)
                         {
-                            elem.quality = elem.quality + 1;
+                            ++elem.quality;
                         }
                     }
 
@@ -41,7 +41,7 @@ void GildedRose::updateQuality()
                     {
                         if (elem.quality < 50)
                         {
-                            elem.quality = elem.quality + 1;
+                            ++elem.quality;
                         }
                     }
                 }
@@ -50,7 +50,7 @@ void GildedRose::updateQuality()
 
         if (elem.name != "Sulfuras, Hand of Ragnaros")
         {
-            elem.sellIn = elem.sellIn - 1;
+            --elem.sellIn;
         }
 
         if (elem.sellIn < 0)
@@ -63,20 +63,20 @@ void GildedRose::updateQuality()
                     {
                         if (elem.name != "Sulfuras, Hand of Ragnaros")
                         {
-                            elem.quality = elem.quality - 1;
+                            --elem.quality;
                         }
                     }
                 }
                 else
                 {
-                    elem.quality = elem.quality - elem.quality;
+                    elem.quality = 0;
                 }
             }
             else
             {
                 if (elem.quality < 50)
                 {
-                    elem.quality = elem.quality + 1;
+                    ++elem.quality;
                 }
             }
         }
