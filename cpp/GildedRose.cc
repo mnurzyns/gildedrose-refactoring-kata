@@ -13,25 +13,25 @@ void GildedRose::updateQuality()
     const string brie = "Aged Brie";
     const string concert = "Backstage passes to a TAFKAL80ETC concert";
     const string sulfuras = "Sulfuras, Hand of Ragnaros";
-    for(auto elem : items)
+    for(int i = 0; i < items.size(); i++)
     {
-        if(elem.name != brie && elem.name != concert && elem.name != sulfuras && elem.quality > 0)
-            --elem.quality;
-        else if(elem.quality < 50)
+        if(items[i].isRegularItem && items[i].quality > 0)
+            --items[i].quality;
+        else if(!items[i].isRegularItem && items[i].quality < 50)
         {
-            ++elem.quality;
+            ++items[i].quality;
 
-            if(elem.name == concert && elem.sellIn < 6) ++elem.quality;
-            if(elem.name == concert && elem.sellIn < 11) ++elem.quality;
+            if(items[i].name == concert && items[i].sellIn < 6) ++items[i].quality;
+            if(items[i].name == concert && items[i].sellIn < 11) ++items[i].quality;
         }
 
-        if(elem.name != sulfuras) --elem.sellIn;
+        if(items[i].name != sulfuras) --items[i].sellIn;
 
-        if(elem.sellIn < 0)
+        if(items[i].sellIn < 0)
         {
-            if(elem.name != brie && elem.name != concert && elem.name != sulfuras && elem.quality > 0) --elem.quality;
-            else if(elem.name != brie  && (elem.name == concert || elem.name == sulfuras || elem.quality <= 0)) elem.quality = 0;
-            else if(elem.quality < 50) ++elem.quality;
+            if(items[i].isRegularItem && items[i].quality > 0) --items[i].quality;
+            else if(items[i].name != brie  && (items[i].name == concert || items[i].name == sulfuras || items[i].quality <= 0)) items[i].quality = 0;
+            else if(items[i].name == brie && items[i].quality < 50) ++items[i].quality;
         }
     }
 }
