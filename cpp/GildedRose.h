@@ -7,6 +7,7 @@ public:
     ::std::string name;
     int sellIn;
     int quality;
+    const bool isRegularItem = name != "Aged Brie" && name != "Sulfuras, Hand of Ragnaros" && name != "Backstage passes to a TAFKAL80ETC concert";
     Item(::std::string name, int sellIn, int quality) : name(::std::move(name)), sellIn(sellIn), quality(quality)
     {}
 };
