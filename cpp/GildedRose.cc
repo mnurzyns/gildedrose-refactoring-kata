@@ -32,6 +32,7 @@ void GildedRose::updateQuality()
             if     (items[i].isRegularItem && items[i].quality > 0) --items[i].quality;
             else if(items[i].name != brie  &&(items[i].name == concert || items[i].name
                 == sulfuras || items[i].quality <= 0)) items[i].quality = 0;
+                
             else if(items[i].name == brie  && items[i].quality < 50) ++items[i].quality;
         }
     }
