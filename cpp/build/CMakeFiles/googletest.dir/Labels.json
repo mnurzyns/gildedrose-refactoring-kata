@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest.rule"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest-complete.rule"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-install.rule"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-download.rule"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-update.rule"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-patch.rule"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-configure.rule"
+		},
+		{
+			"file" : "/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest"
+		],
+		"name" : "googletest"
+	}
+}

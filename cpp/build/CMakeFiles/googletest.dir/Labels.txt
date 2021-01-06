@@ -1,0 +1,13 @@
+# Target labels
+ googletest
+# Source files and their labels
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest.rule
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest-complete.rule
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-install.rule
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-mkdir.rule
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-download.rule
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-update.rule
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-patch.rule
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-configure.rule
+/home/xrimir/Desktop/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-stamp/googletest-build.rule
