@@ -23,21 +23,22 @@ void GildedRose::updateQuality()
         
         if(isAboveLowestQualityValue(items[i].quality)) {
 
-        if (itemName != z && itemName != x && itemName != y)
+        if ((itemName == z || itemName == x || itemName == y ))
         {
-            items[i].quality--;   
-        }
-        else
-        {
-            if (isUnderHighestQualityValue(items[i].quality))
+             if (isUnderHighestQualityValue(items[i].quality))
             {
                 items[i].quality++;
                 if (itemName == x)
                 {
-                    items[i].sellIn < 11 ? items[i].quality++ : false;
-                    items[i].sellIn < 6 ? items[i].quality++ : false;
+                    items[i].sellIn < 11 ? items[i].quality++ : false ;
+                    items[i].sellIn < 6 ? items[i].quality++ : false ;
                 }
             }
+        }
+        else
+        {
+            items[i].quality--;  
+            
         }
     }
 
