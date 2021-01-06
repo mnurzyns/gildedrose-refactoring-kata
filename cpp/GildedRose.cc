@@ -14,12 +14,12 @@ void GildedRose::updateQuality()
 
 
         if(items[i].quality > 0) {
-            
+
         if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert")
         {
                 if (items[i].name != "Sulfuras, Hand of Ragnaros")
                 {
-                    items[i].quality = items[i].quality - 1;
+                    items[i].quality--;
                 }  
         }
 
@@ -29,20 +29,20 @@ void GildedRose::updateQuality()
         {
             if (items[i].quality < 50)
             {
-                items[i].quality = items[i].quality + 1;
+                items[i].quality++;
 
                 if (items[i].name == "Backstage passes to a TAFKAL80ETC concert")
                 {
                     if (items[i].sellIn < 11)
                     {
 
-                            items[i].quality = items[i].quality + 1;
+                            items[i].quality++;
                         
                     }
 
                     if (items[i].sellIn < 6)
                     {
-                            items[i].quality = items[i].quality + 1;
+                            items[i].quality++;
                     }
                 }
             }
@@ -54,7 +54,7 @@ void GildedRose::updateQuality()
 
         if (items[i].name != "Sulfuras, Hand of Ragnaros")
         {
-            items[i].sellIn = items[i].sellIn - 1;
+            items[i].sellIn--;
         }
 
 
@@ -70,20 +70,20 @@ void GildedRose::updateQuality()
                     {
                         if (items[i].name != "Sulfuras, Hand of Ragnaros")
                         {
-                            items[i].quality = items[i].quality - 1;
+                            items[i].quality--;
                         }
                     }
                 }
                 else
                 {
-                    items[i].quality = items[i].quality - items[i].quality;
+                    items[i].quality = 0;
                 }
             }
             else
             {
                 if (items[i].quality < 50)
                 {
-                    items[i].quality = items[i].quality + 1;
+                    items[i].quality++;
                 }
             }
         }
