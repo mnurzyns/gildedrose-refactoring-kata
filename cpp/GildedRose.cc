@@ -15,7 +15,7 @@ void GildedRose::updateQuality()
 
     for (int i = 0; i < items.size(); i++)
     {
-        if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].name != "Sulfuras, Hand of Ragnaros")
+        if (items[i].name != name1 && items[i].name != name2 && items[i].name != name3)
         {
             if (items[i].quality > 0)
             {
@@ -28,7 +28,7 @@ void GildedRose::updateQuality()
             {
                 ++items[i].quality;
 
-                if (items[i].name == "Backstage passes to a TAFKAL80ETC concert")
+                if (items[i].name == name2)
                 {
                     if (items[i].sellIn < 11)
                     {
@@ -43,20 +43,20 @@ void GildedRose::updateQuality()
             }
         }
 
-        if (items[i].name != "Sulfuras, Hand of Ragnaros")
+        if (items[i].name != name3)
         {
             --items[i].sellIn;
         }
 
         if (items[i].sellIn < 0)
         {
-            if (items[i].name != "Aged Brie")
+            if (items[i].name != name1)
             {
-                if (items[i].name != "Backstage passes to a TAFKAL80ETC concert")
+                if (items[i].name != name2)
                 {
                     if (items[i].quality > 0)
                     {
-                        if (items[i].name != "Sulfuras, Hand of Ragnaros")
+                        if (items[i].name != name3)
                         {
                             --items[i].quality;
                         }
