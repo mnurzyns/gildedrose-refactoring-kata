@@ -20,38 +20,38 @@ void GildedRose::updateQuality() {
     const char* BACKSTAGEPASS = "Backstage passes to a TAFKAL80ETC concert";
     const char* SULFURAS = "Sulfuras, Hand of Ragnaros";
 
-    for (int i = 0; i < items.size(); i++) {
-        --items[i].sellIn;
-        if (items[i].name == AGEDBRIE) {
-            refreshQuality(items[i].quality);
-            if (items[i].sellIn < 0) {
-                refreshQuality(items[i].quality);
+    for (auto &it : items) {
+        --it.sellIn;
+        if (it.name == AGEDBRIE) {
+            refreshQuality(it.quality);
+            if (it.sellIn < 0) {
+                refreshQuality(it.quality);
             }
-        } else if (items[i].name == BACKSTAGEPASS) {
-            refreshQuality(items[i].quality);
+        } else if (it.name == BACKSTAGEPASS) {
+            refreshQuality(it.quality);
 
-            if (items[i].sellIn < 5) {
-                ++items[i].quality;
+            if (it.sellIn < 5) {
+                ++it.quality;
             }
-            if (items[i].sellIn < 10) {
-                ++items[i].quality;
+            if (it.sellIn < 10) {
+                ++it.quality;
             }
-            if (items[i].sellIn < 0) {
-                items[i].quality = 0;
+            if (it.sellIn < 0) {
+                it.quality = 0;
             }
-        } else if (items[i].name == SULFURAS) {
-            items[i].sellIn++;
-            refreshQuality(items[i].quality);
+        } else if (it.name == SULFURAS) {
+            it.sellIn++;
+            refreshQuality(it.quality);
         }
 
         else  // Every other item
         {
-            if (items[i].quality > 0) {
-                --items[i].quality;
+            if (it.quality > 0) {
+                --it.quality;
             }
-            if (items[i].sellIn < 0) {
-                if (items[i].quality > 0) {
-                    --items[i].quality;
+            if (it.sellIn < 0) {
+                if (it.quality > 0) {
+                    --it.quality;
                 }
             }
         }
