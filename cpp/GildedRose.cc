@@ -9,7 +9,7 @@ GildedRose::GildedRose(::std::vector<Item> && items) : items(::std::move(items))
 
 const char* Backstage = "Backstage passes to a TAFKAL80ETC concert";
 const char* Sulfuras = "Sulfuras, Hand of Ragnaros";
-const char* AgedBrie = "Aged Brie";
+char* AgedBrie = "Aged Brie";
 void GildedRose::updateQuality()
 {
     for (int i = 0; i < items.size(); i++)
@@ -53,12 +53,10 @@ void GildedRose::updateQuality()
             {
                 if (items[i].name != Backstage)
                 {
-                    if (items[i].quality > 0)
+                    if (items[i].quality > 0 && items[i].name != Sulfuras)
                     {
-                        if (items[i].name != Sulfuras)
-                        {
-                            --items[i].quality;
-                        }
+                        --items[i].quality;
+
                     }
                 }
                 else
