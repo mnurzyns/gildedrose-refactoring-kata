@@ -1,5 +1,5 @@
 #include "GildedRose.h"
-
+#include <string>
 
 GildedRose::GildedRose(::std::vector<Item> const& items) : items(items)
 {}
@@ -9,6 +9,10 @@ GildedRose::GildedRose(::std::vector<Item> && items) : items(::std::move(items))
 
 void GildedRose::updateQuality()
 {
+    std::string name1 = "Aged Brie";
+    std::string name2 = "Backstage passes to a TAFKAL80ETC concert";
+    std::string name3 = "Sulfuras, Hand of Ragnaros";
+
     for (int i = 0; i < items.size(); i++)
     {
         if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert" && items[i].name != "Sulfuras, Hand of Ragnaros")
