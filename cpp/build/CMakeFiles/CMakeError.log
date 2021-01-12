@@ -1,0 +1,51 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_168d1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_168d1.dir/build.make CMakeFiles/cmTC_168d1.dir/build
+make[1]: Wejście do katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_168d1.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_168d1.dir/CheckSymbolExists.c.o   -c /home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_168d1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_168d1.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_168d1.dir/CheckSymbolExists.c.o  -o cmTC_168d1 
+/usr/bin/ld: CMakeFiles/cmTC_168d1.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text+0x1f): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_168d1.dir/build.make:87: cmTC_168d1] Błąd 1
+make[1]: Opuszczenie katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_168d1/fast] Błąd 2
+
+File /home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_394e0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_394e0.dir/build.make CMakeFiles/cmTC_394e0.dir/build
+make[1]: Wejście do katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_394e0.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_394e0.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_394e0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_394e0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_394e0.dir/CheckFunctionExists.c.o  -o cmTC_394e0 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_394e0.dir/build.make:87: cmTC_394e0] Błąd 1
+make[1]: Opuszczenie katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_394e0/fast] Błąd 2
+
+

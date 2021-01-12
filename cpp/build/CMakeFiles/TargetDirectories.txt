@@ -1,0 +1,5 @@
+/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/rebuild_cache.dir
+/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/edit_cache.dir
+/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/GildedRoseTextTests.dir
+/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/googletest.dir
+/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/CMakeFiles/GildedRose.dir
