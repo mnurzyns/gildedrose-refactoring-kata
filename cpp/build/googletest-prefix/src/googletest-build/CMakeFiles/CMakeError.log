@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d2e76/fast"
+make[3]: Wejście do katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_d2e76.dir/build.make CMakeFiles/cmTC_d2e76.dir/build
+make[4]: Wejście do katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d2e76.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d2e76.dir/CheckSymbolExists.c.o   -c /home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_d2e76
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2e76.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_d2e76.dir/CheckSymbolExists.c.o  -o cmTC_d2e76 
+/usr/bin/ld: CMakeFiles/cmTC_d2e76.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text+0x1f): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[4]: *** [CMakeFiles/cmTC_d2e76.dir/build.make:87: cmTC_d2e76] Błąd 1
+make[4]: Opuszczenie katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp'
+make[3]: *** [Makefile:121: cmTC_d2e76/fast] Błąd 2
+make[3]: Opuszczenie katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp'
+
+File /home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_08128/fast"
+make[3]: Wejście do katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_08128.dir/build.make CMakeFiles/cmTC_08128.dir/build
+make[4]: Wejście do katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_08128.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_08128.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_08128
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_08128.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_08128.dir/CheckFunctionExists.c.o  -o cmTC_08128 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[4]: *** [CMakeFiles/cmTC_08128.dir/build.make:87: cmTC_08128] Błąd 1
+make[4]: Opuszczenie katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp'
+make[3]: *** [Makefile:121: cmTC_08128/fast] Błąd 2
+make[3]: Opuszczenie katalogu '/home/paro/Pulpit/gildedrose-refactoring-kata/cpp/build/googletest-prefix/src/googletest-build/CMakeFiles/CMakeTmp'
+
+
