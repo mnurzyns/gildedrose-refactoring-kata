@@ -16,32 +16,29 @@ void GildedRose::updateQuality()
     {
         if(items[i].name == AgedBrie)
         {
+             --items[i].sellIn;
             if (items[i].quality < 50)
             {
                 ++items[i].quality;
             }
-
-                --items[i].sellIn;
-
-            if(items[i].sellIn < 0)
-            {
-            if (items[i].quality < 50)
-            {
-                ++items[i].quality;
-            }
-            }
+            if (items[i].quality < 50 && items[i].sellIn < 0)
+                {
+                     ++items[i].quality;
+                }
         }
         else if(items[i].name == Backstage)
         {
             if (items[i].quality < 50)
             {
-                ++items[i].quality;
+
+                    ++items[i].quality;
 
 
-                    if (items[i].sellIn < 11)
+                    if (items[i].sellIn < 11 || items[i].sellIn < 6)
                     {
                         ++items[i].quality;
                     }
+
 
                     if (items[i].sellIn < 6)
                     {
@@ -66,10 +63,9 @@ void GildedRose::updateQuality()
                 ++items[i].quality;
             }
 
-            }
 
-       else {
-
+        }
+        else {
             if (items[i].quality > 0)
             {
                 --items[i].quality;
