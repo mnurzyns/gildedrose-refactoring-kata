@@ -10,72 +10,76 @@ GildedRose::GildedRose(::std::vector<Item> && items) : items(::std::move(items))
 const char* Backstage = "Backstage passes to a TAFKAL80ETC concert";
 const char* Sulfuras = "Sulfuras, Hand of Ragnaros";
 const char* AgedBrie = "Aged Brie";
+
 void GildedRose::updateQuality()
 {
-    for (int i = 0; i < items.size(); i++)
+    for (auto& it : items)
     {
-        if(items[i].name == AgedBrie)
+        if(it.name == AgedBrie)
         {
-             --items[i].sellIn;
-            if (items[i].quality < 50)
+             --it.sellIn;
+            if (it.quality < 50)
             {
-                ++items[i].quality;
+                ++it.quality;
             }
-            if (items[i].quality < 50 && items[i].sellIn < 0)
+            if (it.quality < 50 && it.sellIn < 0)
                 {
-                     ++items[i].quality;
+                     ++it.quality;
                 }
         }
-        else if(items[i].name == Backstage)
+        else if(it.name == Backstage)
         {
-            if (items[i].quality < 50)
+            if (it.quality < 50)
             {
 
-                    ++items[i].quality;
+                    ++it.quality;
 
 
-                    if (items[i].sellIn < 11 || items[i].sellIn < 6)
+                    if (it.sellIn < 11)
                     {
-                        ++items[i].quality;
+                        ++it.quality;
                     }
 
 
-                    if (items[i].sellIn < 6)
+                    if (it.sellIn < 6)
                     {
-                        ++items[i].quality;
+                        ++it.quality;
                     }
 
 
-                    --items[i].sellIn;
+                    --it.sellIn;
 
-                if (items[i].sellIn < 0)
-                {
+                    if (it.sellIn < 0)
+                    {
 
-                        items[i].quality=0;
-                }
+                        it.quality=0;
+                    }
             }
 
         }
-        else if(items[i].name == Sulfuras)
+        else if(it.name == Sulfuras)
         {
-            if (items[i].quality < 50)
+            if (it.quality < 50)
             {
-                ++items[i].quality;
+                ++it.quality;
             }
 
 
         }
         else {
-            if (items[i].quality > 0)
+            --it.sellIn;
+
+            if (it.quality > 0)
             {
-                --items[i].quality;
+                --it.quality;
             }
-            --items[i].sellIn;
-            if(items[i].sellIn < 0)
+
+
+            if(it.sellIn < 0)
             {
-                if(items[i].quality > 0)
+                if(it.quality > 0)
                 {
-                    --items[i].quality;
+                    --it.quality;
                 }
             }
         }
