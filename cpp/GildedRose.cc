@@ -62,12 +62,14 @@ void GildedRose::updateQuality()
                         }
                     }
                 }
-                else
+
+                if(items[i].name == name2)
                 {
                     items[i].quality=0;
                 }
             }
-            else if (items[i].quality < 50)
+
+            if (items[i].quality < 50 && items[i].name == name1)
             {
                 ++items[i].quality;
             }
