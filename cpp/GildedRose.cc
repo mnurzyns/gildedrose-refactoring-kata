@@ -15,7 +15,23 @@ void GildedRose::updateQuality()
 
     for (int i = 0; i < items.size(); i++)
     {
-        //everything but name 1,2,3
+        //name 1
+        if(items[i].name == name1)
+        {
+            if (items[i].quality < 50)
+            {
+                ++items[i].quality;
+            }
+
+            --items[i].sellIn;
+
+            if(items[i].sellIn < 0 && items[i].quality < 50)
+            {
+                ++items[i].quality;
+            }
+
+        }
+
         if (items[i].name != name1 && items[i].name != name2 && items[i].name != name3)
         {
             if (items[i].quality > 0)
@@ -23,11 +39,11 @@ void GildedRose::updateQuality()
                 --items[i].quality;
             }
         }
-        else//name 1, 2 and 3
+        else if(items[i].name != name1)
         {
             if (items[i].quality < 50)
             {
-                ++items[i].quality;//name1 + 1 q
+                ++items[i].quality;
 
                 if (items[i].name == name2)
                 {
@@ -46,7 +62,7 @@ void GildedRose::updateQuality()
 
 
         //everything but name 3
-        if (items[i].name != name3)
+        if (items[i].name != name3 && items[i].name != name1)
         {
             --items[i].sellIn; //name1 - 1 sellIn
         }
@@ -55,15 +71,9 @@ void GildedRose::updateQuality()
         if (items[i].name != name1 && items[i].name != name2 && items[i].quality > 0 && items[i].name != name3)
         {
             if (items[i].sellIn < 0)
-            {        
+            {
                 --items[i].quality;
             }
-        }
-
-        //name 1
-        if(items[i].sellIn < 0 && items[i].quality < 50 && items[i].name == name1)
-        {
-            ++items[i].quality;
         }
 
         //name 2
