@@ -50,28 +50,19 @@ void GildedRose::updateQuality()
 
         if (items[i].sellIn < 0)
         {
-            if (items[i].name != name1)
-            {
-                if (items[i].name != name2)
-                {
-                    if (items[i].quality > 0)
-                    {
-                        if (items[i].name != name3)
-                        {
-                            --items[i].quality;
-                        }
-                    }
-                }
-
-                if(items[i].name == name2)
-                {
-                    items[i].quality=0;
-                }
+            if (items[i].name != name1 && items[i].name != name2 && items[i].quality > 0 && items[i].name != name3)
+            {        
+                --items[i].quality;
             }
 
             if (items[i].quality < 50 && items[i].name == name1)
             {
                 ++items[i].quality;
+            }
+
+            if(items[i].name == name2)
+            {
+                items[i].quality=0;
             }
         }
     }
