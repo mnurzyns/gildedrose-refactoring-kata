@@ -29,7 +29,32 @@ void GildedRose::updateQuality()
             {
                 ++items[i].quality;
             }
+        }
 
+        //name 2
+        if(items[i].name == name2)
+        {
+            if (items[i].quality < 50)
+            {
+                ++items[i].quality;
+
+                if (items[i].sellIn < 11)
+                {
+                    ++items[i].quality;
+                }
+
+                if (items[i].sellIn < 6)
+                {
+                    ++items[i].quality;
+                }
+            }
+
+            --items[i].sellIn;
+
+            if(items[i].sellIn < 0)
+            {
+                items[i].quality = 0;
+            }
         }
 
         if (items[i].name != name1 && items[i].name != name2 && items[i].name != name3)
@@ -39,30 +64,17 @@ void GildedRose::updateQuality()
                 --items[i].quality;
             }
         }
-        else if(items[i].name != name1)
+        else if(items[i].name != name1 && items[i].name != name2)
         {
             if (items[i].quality < 50)
             {
                 ++items[i].quality;
-
-                if (items[i].name == name2)
-                {
-                    if (items[i].sellIn < 11)
-                    {
-                        ++items[i].quality;
-                    }
-
-                    if (items[i].sellIn < 6)
-                    {
-                        ++items[i].quality;
-                    }
-                }
             }
         }
 
 
-        //everything but name 3
-        if (items[i].name != name3 && items[i].name != name1)
+        //everything but name 3,2,1
+        if (items[i].name != name3 && items[i].name != name1 && items[i].name != name2)
         {
             --items[i].sellIn; //name1 - 1 sellIn
         }
@@ -73,15 +85,6 @@ void GildedRose::updateQuality()
             if (items[i].sellIn < 0)
             {
                 --items[i].quality;
-            }
-        }
-
-        //name 2
-        if(items[i].name == name2)
-        {
-            if(items[i].sellIn < 0)
-            {
-                items[i].quality = 0;
             }
         }
     }
