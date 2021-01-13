@@ -57,6 +57,15 @@ void GildedRose::updateQuality()
             }
         }
 
+        //name 3
+        if(items[i].name == name3)
+        {
+            if (items[i].quality < 50)
+            {
+                ++items[i].quality;
+            }
+        }
+
         if (items[i].name != name1 && items[i].name != name2 && items[i].name != name3)
         {
             if (items[i].quality > 0)
@@ -71,12 +80,7 @@ void GildedRose::updateQuality()
                 --items[i].quality;
             }
         }
-        else if(items[i].name != name1 && items[i].name != name2)
-        {
-            if (items[i].quality < 50)
-            {
-                ++items[i].quality;
-            }
-        }
+
+
     }
 }
