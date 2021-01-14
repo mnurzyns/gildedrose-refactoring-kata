@@ -33,32 +33,30 @@ void GildedRose::updateQuality()
                         ++items[i].quality;
                     }
                 }
-
-            }
-
-            if(items[i].name != name3)
-            {
-                --items[i].sellIn;
-            }
-
-            if(items[i].sellIn < 0  && items[i].name == name2)
-            {
-                items[i].quality = 0;
-            }
-
-            if(items[i].name == name1 && items[i].sellIn < 0 && items[i].quality < 50)
-            {
-                ++items[i].quality;
             }
         }
-        else
+
+        if(items[i].name != name3)
+        {
+            --items[i].sellIn;
+        }
+
+        if(items[i].sellIn < 0  && items[i].name == name2)
+        {
+            items[i].quality = 0;
+        }
+
+        if(items[i].name == name1 && items[i].sellIn < 0 && items[i].quality < 50)
+        {
+            ++items[i].quality;
+        }
+
+        if(items[i].name != name1 && items[i].name != name2 && items[i].name != name3)
         {
             if (items[i].quality > 0)
             {
                 --items[i].quality;
             }
-
-            --items[i].sellIn;
 
             if (items[i].sellIn < 0)
             {
